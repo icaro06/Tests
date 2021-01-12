@@ -149,7 +149,7 @@ int get_tk_strB( FILE *fp, unsigned char *buf,unsigned char *s, unsigned char *t
         char *pt;//pointeur vers un caractère 
         
         if (strlen(buf)>1) { //supprime  les espaces au début  de la chaine , plus de un char 
-            while (  buf[0] <=32 && (pt=strchr(buf,32)) !=NULL )//Pointeur sur la première occurrence de 32 SPACE
+            while (  buf[0] <=32 &&  ( (pt=strchr(buf,9)) !=NULL  || (pt=strchr(buf,32)) !=NULL) )//Pointeur sur la première occurrence de 32 SPACE ou tab 9
                 {sprintf (buf,"%s",pt+1) ;}//Copie du pointeur+1 .. en avant
         }    
     }
